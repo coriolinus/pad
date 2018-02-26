@@ -1,0 +1,9 @@
+[package]
+name = "pad"
+version = "0.1.0"
+authors = ["Peter Goodspeed-Niklaus <peter.r.goodspeedniklaus@gmail.com>"]
+
+[dependencies]
+clap = "2.30.0"
+itertools = "0.7.6"
+unicode-segmentation = "1.2.0"
