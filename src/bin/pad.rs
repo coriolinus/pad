@@ -7,7 +7,7 @@ extern crate clap;
 extern crate failure;
 use failure::Error;
 
-extern crate pad;
+extern crate xpad;
 
 // our arguments are optional: we really don't care if they're not present,
 // but we want to abort if there are other errors
@@ -36,7 +36,7 @@ fn do_pad() -> Result<(), Error> {
     let filename = optional!(value_t!(matches, "file", String));
     let delim = optional!(value_t!(matches, "delim", char)).unwrap_or(' ');
     let sep = optional!(value_t!(matches, "sep", char)).unwrap_or(' ');
-    let aligns = optional!(values_t!(matches, "align", pad::Alignment)).unwrap_or(Vec::new());
+    let aligns = optional!(values_t!(matches, "align", xpad::Alignment)).unwrap_or(Vec::new());
 
     // read the input into a string
     // we need to keep track of the entire thing until EOF, so just bite the bullet
@@ -51,9 +51,9 @@ fn do_pad() -> Result<(), Error> {
         }
     }
 
-    let document = pad::parse_document(&input, delim);
-    let oc = pad::configure_output(&document, &aligns, sep);
-    pad::print(&document, &oc)?;
+    let document = xpad::parse_document(&input, delim);
+    let oc = xpad::configure_output(&document, &aligns, sep);
+    xpad::print(&document, &oc)?;
     Ok(())
 }
 

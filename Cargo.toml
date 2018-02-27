@@ -1,12 +1,12 @@
 [package]
-name = "pad"
+name = "xpad"
 version = "0.1.0"
 authors = ["Peter Goodspeed-Niklaus <peter.r.goodspeedniklaus@gmail.com>"]
 
 description = "Command line tool to pad delimited fields into neat columns"
 repository = "https://github.com/coriolinus/pad"
 readme = "README.md"
-keywords = ["column", "padding"]
+keywords = ["pad", "column", "padding"]
 categories = ["command-line-interface", "text-processing"]
 license = "MIT"
 
