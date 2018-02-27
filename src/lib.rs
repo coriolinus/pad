@@ -5,6 +5,7 @@
 
 use std::cmp::max;
 use std::io;
+use std::str::FromStr;
 
 extern crate itertools;
 use itertools::{Itertools, Position};
@@ -61,6 +62,18 @@ pub enum Alignment {
 impl Default for Alignment {
     fn default() -> Alignment {
         Alignment::Left
+    }
+}
+
+impl FromStr for Alignment {
+    type Err = &'static str;
+    fn from_str(input: &str) -> Result<Alignment, &'static str> {
+        match input {
+            "<" | "l" | "L" => Ok(Alignment::Left),
+            "^" | "c" | "C" => Ok(Alignment::Center),
+            ">" | "r" | "R" => Ok(Alignment::Right),
+            _ => Err("invalid alignment character")
+        }
     }
 }
 
