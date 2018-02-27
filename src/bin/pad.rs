@@ -26,10 +26,10 @@ fn do_pad() -> Result<(), Error> {
         (version: crate_version!())
         (author: crate_authors!("\n"))
         (about: crate_description!())
-        (@arg file: -f --file +takes_value "Read from the named file instead of stdin")
-        (@arg delim: -d --delimiter +takes_value "Specify the delimiter with which to distinguish input fields")
-        (@arg sep: -s --separator +takes_value "Specify the separator with which to separate output fields")
-        (@arg align: -a --align ... +takes_value "Specify a column's alignment. May be repeated.")
+        (@arg file: -f --file +takes_value "Read from the named file instead of stdin.")
+        (@arg delim: -d --delimiter +takes_value "Specify the delimiter with which to distinguish input fields.")
+        (@arg sep: -s --separator +takes_value "Specify the separator with which to separate output fields.")
+        (@arg align: -a --align ... +takes_value "Specify a column's alignment. May be repeated. Use 'l', 'r', 'c' for left, right, center alignment.")
     ).get_matches();
 
 
